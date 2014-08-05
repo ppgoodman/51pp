@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+
+
+{% block silder %}
+<div class="panel panel-info"  style="padding-top: 30px;">
+<div class="panel-heading">
+<p class="text-center">
+
+</p>
+</div>
+</div>
+
+
+
+{% end %}
+
+{% block body %}
+
+<div class="container">
+
+<div class="jumbotron">
+    <h2>{{name}}</h2>
+
+    <p>文件总大小:&nbsp;&nbsp;{{getsize(size)}}</p>
+
+    <p>文件个数:&nbsp;&nbsp;{{filenum}}</p>
+
+    <p>创建时间:&nbsp;&nbsp;{{buildtime}}</p>
+    <a href="magnet:?xt=urn:btih:{{infohash}}">
+    <button type="button " class="btn btn-danger btn-lg">
+        <span class="glyphicon glyphicon-download-alt"></span> 立即下载
+    </button>
+    </a>
+</div>
+
+<div class="panel panel-success">
+    <div class="panel-heading"><p class="text-center">File List Detail</p></div>
+    <table class="table table-condensed table-hover">
+        <thead>
+        <tr>
+            <th>No.</th>
+            <th>文件名</th>
+        </tr>
+        </thead>
+
+        {% for index, file in enumerate(filelist) %}
+        <tbody>
+        <tr>
+            <td>{{index}}</td>
+            <td>{{file}}</td>
+        </tr>
+        </tbody>
+        {% end %}
+
+
+    </table>
+</div>
+</div>
+{% end %}

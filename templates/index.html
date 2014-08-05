@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+
+{% block silder %}
+<!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <!-- Indicators 
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol> -->
+      <div class="carousel-inner">
+        <div class="item active masthead">
+          <div class="masthead-bg"></div>
+          <div class="container">
+            <div class="carousel-caption" style="height: 290px;padding-top: 0px; padding-bottom: 0px;">
+              <h1>51PP</h1>
+              <h2>高端的BT种子搜索引擎</h2>
+                 <br>
+                <form action="/search" method="get" role="search">
+                    <div class="input-group">
+                    <input type="text" maxlength="50" equired placeholder="你想要什么?" baidusug="1" class="form-control input-lg" name="q" id="mybs" autocomplete="off">
+                    <input type="hidden" name="p" value="0">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary btn-lg" type="submit">Go!</button>
+                    </span>
+                    </div>
+
+                </form>
+
+                <div class="text-left">
+                    {% for r in keys  %}
+                    <a href="{{r['url']}}" class="{{r['label']}}" role="button">{{r['key']}}</a>
+                    {% end %}
+                </div>
+
+
+            </div>
+              <br>
+          </div>
+        </div>
+      </div>
+      <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> -->
+    </div><!-- /.carousel -->
+
+
+
+
+	<div class="bc-social">
+        <button type="button" class="btn btn-primary">今日最新 {{newbt}}</button>
+        <button type="button" class="btn btn-success">资源总数 {{totalbt}}</button>
+        <button type="button" class="btn btn-warning">搜索次数 {{searchtimes}}</button>
+	</div>
+{% end %}	

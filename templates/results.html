@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+
+
+{% block silder %}
+<link href="/static/css/docs.min.css" rel="stylesheet">
+<div class="panel panel-info" style="padding-top: 30px;">
+    <div class="panel-heading">
+        <h3 id="skeytitle" class="text-center">{{skey}} <small>总计 {{totalfind}} 条, 耗时 {{usetime}}s</small></h3>
+    </div>
+</div>
+
+{% end %}
+
+{% block body %}
+<div class="container">
+<a class="thumbnail" target="_blank" href="http://item.taobao.com/item.htm?spm=a1z10.1.w8179050-7935031331.2.KD4ejV&id=39995318357">
+  <img src="/static/upload/bb1.jpg">
+</a>
+
+{% if res is None %}
+<div class="bs-callout bs-callout-warning">
+    <h4> 非常抱歉，没有找到对应的资源，可能是关键字太长，请缩短关键字再次查询，谢谢！</h4>
+</div>
+
+{% else  %}
+{% for r in res  %}
+<div class="bs-callout bs-callout-info">
+    <h4>
+        <a href="/detail/{{r['infohash']}}"> {{r['name']}} </a>
+        <small>({{getsize(r['length'])}})</small>
+    </h4>
+    <p>{{r['files'][:50]}}</p>
+
+    <p>
+      <h5>创建时间:{{r['buildtime']}} <span class="s">文件总大小:{{getsize(r['length'])}}</span></h5>
+    </p>
+    <p>
+    <a href="magnet:?xt=urn:btih:{{r['infohash']}}">
+    <button type="button " class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-download-alt"></span> 立即下载
+    </button>
+    </a>
+    <button type="button " class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-play"></span> 在线播放
+    </button>
+    </p>
+</div>
+{% end %}
+{% end %}
+
+
+
+
+<div class="row">
+    <div class="col-sm-8">
+        <ul id="pagebar" class="pagination pagination-lg"></ul>
+    </div>
+</div>
+
+</div>
+
+
+
+{% end %}
+
+{% block ext_import_js %}
+<script src="/static/js/bootstrap-paginator.min.js"></script>
+{% end %}
+
+{% block extjs %}
+    //callback when page_id clicked
+    function func1(page_id) {
+        var _pid = page_id - 1;
+        //alert(_pid);
+        url = "/search?q={{skey}}&p=" + _pid;
+        //alert(url);
+        window.location.href=url;
+
+    }
+
+    $(function(){
+        //init paginator
+        $('#pagebar').paginator({
+                current_page: {{curpage}}, page_count: {{pagecount}}, button_number:10, pager_click: func1
+        });
+
+        //optional: enable paginator tooltips
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+{% end %}

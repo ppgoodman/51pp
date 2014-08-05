@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+
+{% block silder %}
+<div class="panel panel-info"  style="padding-top: 30px;">
+<div class="panel-heading">
+<p class="text-center">
+
+</p>
+</div>
+</div>
+
+
+
+{% end %}
+
+{% block body %}
+
+<div class="container">
+
+<div class="jumbotron">
+    <h1>发生错误</h1>
+
+    <p>非常抱歉，发生了错误，请返回重试! (error code : {{errcode}})</p>
+    <p>{{errmsg}}</p>
+    <p>
+    <a href="/">
+        <button type="button " class="btn btn-primary btn-lg">
+            <span class="glyphicon glyphicon-repeat"></span> 返回首页
+        </button>
+    </a>
+    </p>
+</div>
+</div>
+{% end %}

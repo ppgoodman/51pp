@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    51PP pw 搜索电影 电影 爽片 搜片 片子 我要片片 热舞 美女 音乐 在线视频 视频 游戏 软件 bt 下载
+    <meta name="keywords" content="大片,比特,热舞, 美女, 音乐, 在线视频, 视频, 游戏, 软件,电影,爽片,搜片,搜索电影,bt下载,torrent,magnet,磁力下载,BT种子搜索,磁力链接,迅雷云播,百度云盘,51pp,我要下片，我要片片">
+    <meta name="description" content="美女、热舞、音乐、游戏、软件、视频、提供bt下载、提供磁力链接搜索、电影搜索、音乐搜索、迅雷云播放，我要下片子，我要搜索，我要云盘，迅雷云播">
+    <meta name="author" content="51pp.pw">
+    <meta name="application-name" content="51pp.pw">
+
+    <!-- Site CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/site.min.css" rel="stylesheet">
+
+    <!-- Extras CSS -->
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/static/js/html5shiv.min.js"></script>
+    <script src="/static/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="http://static.bootcss.com/www/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="http://static.bootcss.com/www/assets/ico/favicon.png">
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?f3cb30dfa7a70fe67c3e79af78892c59";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header navbar-left">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">51PP.pw</a>
+        </div>
+        <div class="collapse navbar-right navbar-collapse" id="bs-1">
+            <ul class="nav navbar-nav">
+                <li><a href="https://www.51pp.pw"><span class="glyphicon glyphicon-lock"></span>安全通道</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="/login">VIP登录</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="/register">注册VIP</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="/intro">介绍与申明</a></li>
+            </ul>
+            <form class="navbar-form navbar-left form-inline" method="get" action="/search" role="search">
+                <div class="form-group">
+                    <input type="text" maxlength="50" name="q" class="form-control" baidusug="1" required
+                           placeholder="输入你所想要的" id="bdSug_ipt1404039428523" autocomplete="off">
+                </div>
+                <input type="hidden" name="p" value="0">
+                <button type="submit" class="btn btn-info">Go</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% block silder %}{% end %}
+<!-- silder =========================================================================================================================== -->
+
+{% block body %}{% end %}
+<!-- body =========================================================================================================================== -->
+
+<!-- FOOTER -->
+<footer class="footer ">
+    <p>
+        友情连接: <strong><a href="http://avi.blog.jp/"> AVI导航 </a></strong>|
+        <strong><a href="http://www.codesweetie.com/"> CodeSweetie </a></strong>|
+        <strong><a href="https://www.51pp.pw/"> 征求友情链接 </a></strong>
+    </p>
+    <!--<p>-->
+    <!--<span>友情连接 : </span><strong><a href="http://www.51pp.pw/">  www.ppp.com  </a></strong> | <strong><a href="http://www.51pp.pw/">  www.ppp.com  </a></strong>-->
+    <!--</p>-->
+    <p>
+        <a href="http://www.51pp.pw/">Copyright © 2002-2014 51PP.PW 51PP</a>
+    </p>
+    <p><strong>QQ:2731560337 耀男</strong></p>
+</footer>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/jquery.unveil.min.js"></script>
+<script src="/static/js/jquery.scrollUp.min.js"></script>
+<script charset="gbk" src="/static/js/opensug.js"></script>
+{% block ext_import_js %}{% end %}
+
+<script>
+    $(document).ready(function () {
+        $("img.lazy").unveil();
+
+        $.scrollUp({
+            scrollName: 'scrollUp', // Element ID
+            topDistance: '300', // Distance from top before showing element (px)
+            topSpeed: 300, // Speed back to top (ms)
+            animation: 'fade', // Fade, slide, none
+            animationInSpeed: 200, // Animation in speed (ms)
+            animationOutSpeed: 200, // Animation out speed (ms)
+            scrollText: '', // Text for element
+            activeOverlay: false  // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+    });
+    {% block extjs %}{% end %}
+</script>
+
+
+</body>
+</html>
